@@ -14,6 +14,9 @@ kotlin {
         }
     }
     
+    // Configuración de XCFramework para iOS
+    val xcf = org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework("Shared")
+
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -21,6 +24,7 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+            xcf.add(this)
         }
     }
 
