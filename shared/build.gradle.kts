@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.composeMultiplatform)
@@ -14,8 +16,7 @@ kotlin {
         }
     }
     
-    // Configuración de XCFramework para iOS
-    val xcf = org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework("Shared")
+    val xcf = XCFramework("Shared")
 
     listOf(
         iosArm64(),
