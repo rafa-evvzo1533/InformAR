@@ -16,7 +16,7 @@ workflows:
       - name: Build shared module
         script: |
           chmod +x gradlew
-          ./gradlew :shared:assembleXcframework
+          ./gradlew :shared:assembleSharedXcframework
       - name: Build iOS app
         script: |
           xcodebuild build -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" -configuration Release -sdk iphoneos CODE_SIGNING_ALLOWED=NO
