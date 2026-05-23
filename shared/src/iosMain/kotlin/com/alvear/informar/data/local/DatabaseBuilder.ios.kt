@@ -8,10 +8,7 @@ fun getDatabaseBuilder(): RoomDatabase.Builder<AppDatabase> {
     val dbFilePath = NSHomeDirectory() + "/informar_database.db"
     return Room.databaseBuilder<AppDatabase>(
         name = dbFilePath,
-        factory =  { AppDatabase_Impl() }
+        factory = { AppDatabaseConstructor.initialize() }
     )
 }
-
-actual object AppDatabaseConstructor : androidx.room.RoomDatabaseConstructor<AppDatabase> {
-    override fun initialize(): AppDatabase = AppDatabaseConstructor.initialize()
-}
+// Eliminamos el actual object porque Room lo genera automáticamente
