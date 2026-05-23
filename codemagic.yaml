@@ -10,6 +10,9 @@ workflows:
         XCODE_PROJECT: "iosApp/iosApp.xcodeproj"
         XCODE_SCHEME: "iosApp"
     scripts:
+      - name: Set permissions
+        script: |
+          chmod +x gradlew
       - name: Build shared module
         script: |
           ./gradlew :shared:assembleSharedReleaseFramework
