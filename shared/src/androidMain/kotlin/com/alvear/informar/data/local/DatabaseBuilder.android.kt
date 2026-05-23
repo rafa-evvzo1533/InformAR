@@ -12,7 +12,4 @@ fun getDatabaseBuilder(context: Context): RoomDatabase.Builder<AppDatabase> {
         name = dbFile.absolutePath
     )
 }
-
-actual object AppDatabaseConstructor : androidx.room.RoomDatabaseConstructor<AppDatabase> {
-    override fun initialize(): AppDatabase = AppDatabaseConstructor.initialize()
-}
+// Eliminamos el actual object porque Room lo genera automáticamente
